@@ -14,6 +14,7 @@ namespace divtech_teste.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            // Server=localhost\SQLEXPRESS;Database=master;Trusted_Connection=True;
             optionsBuilder.UseSqlServer("server=localhost\\sqlexpress;database=divtech;trusted_connection=true;TrustServerCertificate=True");
         }
 
