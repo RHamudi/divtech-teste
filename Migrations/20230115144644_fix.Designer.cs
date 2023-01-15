@@ -11,8 +11,8 @@ using divtech_teste.Data;
 namespace divtechteste.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230115104654_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20230115144644_fix")]
+    partial class fix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,11 +26,11 @@ namespace divtechteste.Migrations
 
             modelBuilder.Entity("divtech_teste.Models.Fornecedores", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -40,6 +40,7 @@ namespace divtechteste.Migrations
 
                     b.Property<string>("Especialidade")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("NVARCHAR")
                         .HasColumnName("Especialidade");
 
@@ -49,7 +50,7 @@ namespace divtechteste.Migrations
                         .HasColumnType("NVARCHAR")
                         .HasColumnName("Nome");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Fornecedores", (string)null);
                 });

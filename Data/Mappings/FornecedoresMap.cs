@@ -14,8 +14,8 @@ namespace divtech_teste.Data.Mappings
         {
             builder.ToTable("Fornecedores");
 
-            builder.HasKey(x => x.ID);
-            builder.Property(x => x.ID)
+            builder.HasKey(x => x.Id);
+            builder.Property(x => x.Id)
                 .ValueGeneratedOnAdd()
                 .UseIdentityColumn();
             
@@ -34,7 +34,8 @@ namespace divtech_teste.Data.Mappings
             builder.Property(x => x.Especialidade)
                 .IsRequired()
                 .HasColumnName("Especialidade")
-                .HasColumnType("NVARCHAR");
+                .HasColumnType("NVARCHAR")
+                .HasMaxLength(100);
         }
     }
 }

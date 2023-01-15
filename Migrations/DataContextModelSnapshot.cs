@@ -23,11 +23,11 @@ namespace divtechteste.Migrations
 
             modelBuilder.Entity("divtech_teste.Models.Fornecedores", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
@@ -37,6 +37,7 @@ namespace divtechteste.Migrations
 
                     b.Property<string>("Especialidade")
                         .IsRequired()
+                        .HasMaxLength(100)
                         .HasColumnType("NVARCHAR")
                         .HasColumnName("Especialidade");
 
@@ -46,7 +47,7 @@ namespace divtechteste.Migrations
                         .HasColumnType("NVARCHAR")
                         .HasColumnName("Nome");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Fornecedores", (string)null);
                 });

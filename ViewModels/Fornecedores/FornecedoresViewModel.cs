@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace divtech_teste.Models
+namespace divtech_teste.ViewModels.Fornecedores
 {
-    public class Fornecedores
+    public class FornecedoresViewModel
     {
-        public int Id { get; set; }
         public string Nome { get; set; }
         public string CNPJ { get; set; }
         public string Especialidade { get; set; }

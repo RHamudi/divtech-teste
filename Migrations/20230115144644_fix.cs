@@ -5,7 +5,7 @@
 namespace divtechteste.Migrations
 {
     /// <inheritdoc />
-    public partial class FirstMigration : Migration
+    public partial class fix : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -14,15 +14,15 @@ namespace divtechteste.Migrations
                 name: "Fornecedores",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "NVARCHAR(100)", maxLength: 100, nullable: false),
                     CNPJ = table.Column<string>(type: "NVARCHAR(14)", maxLength: 14, nullable: false),
-                    Especialidade = table.Column<string>(type: "NVARCHAR", nullable: false)
+                    Especialidade = table.Column<string>(type: "NVARCHAR(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Fornecedores", x => x.ID);
+                    table.PrimaryKey("PK_Fornecedores", x => x.Id);
                 });
         }
 
