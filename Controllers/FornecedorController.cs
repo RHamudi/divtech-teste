@@ -68,6 +68,7 @@ namespace divtech_teste.Controllers
 
         [HttpPatch("fornecedores/{id}")]
         public async Task<IActionResult> AtualizarFornecedor(
+            [FromRoute] int id,
             [FromBody] Fornecedores model,
             [FromServices] DataContext context
         )
@@ -75,7 +76,7 @@ namespace divtech_teste.Controllers
             if(!ModelState.IsValid)
                 return BadRequest();
             
-            var forne = await context.Fornecedores.FirstOrDefaultAsync(x => x.Id == model.Id);
+            var forne = await context.Fornecedores.FirstOrDefaultAsync(x => x.Id == id);
             if(forne == null)
                 return NotFound();
             
